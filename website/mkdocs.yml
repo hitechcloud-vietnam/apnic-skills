@@ -1,0 +1,190 @@
+site_name: apnic-skills
+site_description: APNIC Go SDK - Comprehensive coverage of all APNIC public data services
+site_author: hitechcloud-vietnam
+site_url: https://hitechcloud-vietnam.github.io/apnic-skills/
+
+repo_name: hitechcloud-vietnam/apnic-skills
+repo_url: https://github.com/hitechcloud-vietnam/apnic-skills
+edit_uri: edit/main/website/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant      # Instant navigation (no page reload)
+    - navigation.tracking     # Anchor tracking
+    - navigation.tabs         # Top-level sections as tabs
+    - navigation.sections     # Group sections in sidebar
+    - navigation.expand       # Expand all sections by default
+    - navigation.indexes      # Section index pages
+    - navigation.top          # Back-to-top button
+    - search.suggest          # Search suggestions
+    - search.highlight        # Highlight search results
+    - search.share            # Share search queries
+    - toc.follow              # Follow TOC while scrolling
+    - content.code.copy       # Copy code button
+    - content.code.annotate   # Code annotations
+    - content.tabs.link       # Link content tabs
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Navigation (rich menu, no overflow hidden)
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+    - Configuration: getting-started/configuration.md
+  - SDK Reference:
+    - sdk/index.md
+    - Delegated Stats: sdk/delegated.md
+    - Extended Stats: sdk/extended.md
+    - Assigned Stats: sdk/assigned.md
+    - IPv6 Assigned: sdk/ipv6-assigned.md
+    - Legacy Stats: sdk/legacy.md
+    - RDAP: sdk/rdap.md
+    - Whois: sdk/whois.md
+    - Reverse DNS: sdk/reverse-dns.md
+    - BGP (thyme): sdk/bgp.md
+    - IRR Database: sdk/irr.md
+    - RPKI/RRDP: sdk/rpki.md
+    - REx: sdk/rex.md
+    - Transfers: sdk/transfers.md
+    - Changes: sdk/changes.md
+    - Telemetry: sdk/telemetry.md
+    - Data Integrity: sdk/verify.md
+    - Historical Data: sdk/history.md
+    - Filtering: sdk/filtering.md
+  - CLI Reference:
+    - cli/index.md
+    - Stats Commands: cli/stats.md
+    - RDAP Commands: cli/rdap.md
+    - Whois Commands: cli/whois.md
+    - BGP Commands: cli/bgp.md
+    - IRR Commands: cli/irr.md
+    - RPKI Commands: cli/rpki.md
+    - REx Commands: cli/rex.md
+    - Transfer Commands: cli/transfers.md
+    - Verify Commands: cli/verify.md
+    - Filter Command: cli/filter.md
+    - History Command: cli/history.md
+  - Workflows:
+    - workflows/index.md
+    - Country Audit: workflows/country-audit.md
+    - IP Investigation: workflows/ip-investigation.md
+    - ASN Analysis: workflows/asn-analysis.md
+    - Transfer Tracking: workflows/transfer-tracking.md
+    - Data Integrity: workflows/data-integrity.md
+    - Cross-RIR Lookup: workflows/cross-rir.md
+  - Architecture:
+    - architecture/index.md
+    - HTTP Client: architecture/http-client.md
+    - Anti-Scraping: architecture/anti-scraping.md
+    - Chunked Download: architecture/chunked-download.md
+    - Caching: architecture/caching.md
+    - Parser Design: architecture/parser-design.md
+  - API Types:
+    - types/index.md
+    - DelegatedEntry: types/delegated-entry.md
+    - RDAP Types: types/rdap-types.md
+    - BGP Types: types/bgp-types.md
+    - IRR Types: types/irr-types.md
+    - RPKI Types: types/rpki-types.md
+    - REx Types: types/rex-types.md
+  - About:
+    - about/index.md
+    - Changelog: about/changelog.md
+    - License: about/license.md
+    - Contributing: about/contributing.md
+
+# Markdown extensions
+markdown_extensions:
+  - admonition            # Callouts (note, warning, tip)
+  - attr_list             # Attribute lists for images/links
+  - def_list              # Definition lists
+  - footnotes             # Footnotes
+  - md_in_html            # Markdown inside HTML
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables                # Tables
+  - pymdownx.betterem     # Better emphasis
+  - pymdownx.caret        # Insert text
+  - pymdownx.details      # Details/collapsible
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite # Inline code highlighting
+  - pymdownx.keys         # Keyboard keys
+  - pymdownx.mark         # Mark/highlight text
+  - pymdownx.smartsymbols # Smart symbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+  - mermaid2:
+      arguments:
+        theme: neutral
+        securityLevel: 'loose'
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hitechcloud-vietnam/apnic-skills
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: Yes
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: No
+          data: 0
+          note: Thanks for your feedback! We'll improve this.
+
+extra_css:
+  - stylesheets/extra.css

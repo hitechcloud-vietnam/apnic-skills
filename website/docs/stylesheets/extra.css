@@ -1,0 +1,75 @@
+/* apnic-skills website custom styles */
+
+/* Ensure navigation tabs wrap instead of hiding overflow (no overflow:hidden) */
+.md-header__inner,
+.md-tabs {
+  overflow: visible !important;
+}
+
+/* Navigation tabs: wrap to multiple lines on small screens instead of hiding */
+.md-tabs__list {
+  flex-wrap: wrap !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.md-tabs__item {
+  height: auto !important;
+  padding: 0 0.4rem !important;
+}
+
+/* Sidebar navigation: full height, no overflow hiding */
+.md-sidebar__inner {
+  overflow-y: auto !important;
+  max-height: none !important;
+}
+
+/* Make sure long nav items don't get truncated with ellipsis */
+.md-nav__title {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.md-nav__link {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* Mermaid diagrams: center and scroll horizontally if too wide */
+.mermaid {
+  text-align: center;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Code blocks: horizontal scroll instead of clipping */
+.md-typeset pre > code {
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Tables: responsive */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Back-to-top button prominence */
+.md-top {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Admonition tweaks */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Tabbed content */
+.md-typeset .tabbed-set {
+  border-radius: 0.2rem;
+}
